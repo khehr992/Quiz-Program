@@ -1,0 +1,101 @@
+<html>
+
+<head>
+  <title>Super Quiz Time Y'all!</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+
+    var score = 0;
+    var questionCount = 0;
+    function gradeQuiz() {
+
+      console.log(questionCount);
+
+      if (questionCount == 0) {
+        console.log('q1 entered');
+
+
+        //check if the user anwer is equal to something
+        //add one to score if it is correct
+        var answer = document.getElementById("answer").value;
+
+        if (answer == '4') {
+          score++;
+          console.log('score is ' + score);
+        }
+
+        //add one questionCount to advance to the next question
+        questionCount++;
+
+        console.log('transitioned to end of q1 score is ' + score + ' questionCount is now ' + questionCount);
+        document.getElementById("question1").hidden = true;
+        document.getElementById("question2").hidden = false;
+        document.getElementById("answer").value = '';
+      }
+      else if (questionCount == 1) {
+        console.log('q2 entered');
+
+        var answer = document.getElementById("answer").value;
+
+        if (answer == 'Yes') {
+          score++;
+        }
+
+        questionCount++;
+        document.getElementById("question2").hidden = true;
+        document.getElementById("question3").hidden = false;
+        document.getElementById("answer").value = '';
+      } else if (questionCount == 2) {
+        console.log('q3 entered');
+
+        var answer = document.getElementById("answer").value;
+
+        if (answer == '13') {
+          score++;
+        }
+
+        questionCount++;
+
+        document.getElementById("answer").value = '';
+        end();
+        //gradeQuiz();
+      } else {
+        console.log('else entered');
+        //out of questions
+        //end();
+      }
+
+
+    }
+    function end() {
+      console.log('end entered');
+
+      if (questionCount == 3) {
+        console.log('questionCount is 3');
+        //Hide And Reveal Some Stuff
+        document.getElementById("question3").hidden = true;
+        document.getElementById("score").innerHTML = "Your score is:<br>" + score;
+        document.getElementById("score").hidden = false;
+      }
+    }
+  </script>
+</head>
+
+<body title="Quiz Time!!!">
+
+  <h2>Super Duper Excellent Quiz Time!</h2>
+  <p>
+    <span id="question1">Question 1 - What is 2 + 2?</span>
+    <span id="question2" hidden=true>Question 2 - Does a whale weigh more than a goldfish? (answer Yes or No)</span>
+    <span id="question3" hidden=true>Question 3 - How many eggs are in a baker's dozen?</span>
+    <br>
+    <input type="text" id="answer">
+    <input type="button" id="button" class="button" value="Submit Answer" onclick="gradeQuiz()">
+    <!--Hide or Reveal Stuff???-->
+    <br>
+    <span id="score" hidden=true></span>
+    <!--hidden at beginning maybe??-->
+  </p>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+body {
+    background-color: bisque;
+}
+
+h2 {
+    color: blue;
+    font-size: larger;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+p {
+    color:blueviolet;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: medium;
+}
+
+.button {
+    background-color: coral;
+    border: none;
+    color: wheat;
+    
+}
